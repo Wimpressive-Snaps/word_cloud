@@ -1,0 +1,24 @@
+name: wordcloud-cli
+base: core18
+version: 'git'
+summary: A little word cloud generator
+description: |
+ Compared to other wordclouds, this algorithm has the advantage of filling
+ all available space, able to use arbitraty masks and has a stupid simple
+ algorithm..
+
+
+grade: stable
+confinement: strict
+
+parts:
+  wordcloud-cli:
+    plugin: python
+    source: .
+
+apps:
+  wordcloud-cli:
+    command: bin/wordcloud_cli
+    plugs:
+      - home
+      - removable-media
